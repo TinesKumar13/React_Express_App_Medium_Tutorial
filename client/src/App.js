@@ -2,23 +2,29 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { url } from "./Constants";
+import axios from "axios";
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { apiResponse: "" };
-  }
-
-  callAPI() {
-    fetch(url)
-      .then((res) => res.text())
-      .then((res) => this.setState({ apiResponse: res }))
-      .catch((err) => err);
-
-    console.log(url);
+    this.state = {
+      apiResponse: "",
+    };
   }
 
   componentDidMount() {
     this.callAPI();
+  }
+
+  async callAPI() {
+    try {
+      const response = await axios.get(url);
+      this.setState({ apiResponse: response.data });
+    } catch (error) {
+      console.error("There was a problem with the Axios request:", error);
+      // Handle the error gracefully, e.g., set state to indicate an error occurred
+    }
+    console.log(url);
   }
 
   render() {
