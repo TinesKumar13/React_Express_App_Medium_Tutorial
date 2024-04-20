@@ -22,6 +22,7 @@ class App extends Component {
         timeout: 5000, // Specify the timeout value in milliseconds (e.g., 5000 for 5 seconds)
       });
       this.setState({ apiResponse: response.data });
+      console.log("Response : ", response);
     } catch (error) {
       console.error("There was a problem with the Axios request:", error);
       // Handle the error gracefully, e.g., set state to indicate an error occurred
