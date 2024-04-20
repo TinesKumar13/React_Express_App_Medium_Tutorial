@@ -19,7 +19,7 @@ class App extends Component {
   async callAPI() {
     try {
       const response = await axios.get("http://10.2.0.4:80/testAPI", {
-        timeout: 5000, // Specify the timeout value in milliseconds (e.g., 5000 for 5 seconds)
+        timeout: 15000, // Specify the timeout value in milliseconds (e.g., 5000 for 5 seconds)
       });
       this.setState({ apiResponse: response.data });
       console.log("Response : ", response);
