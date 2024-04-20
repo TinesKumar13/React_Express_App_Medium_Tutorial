@@ -1,1 +1,1 @@
-export const url = "http://10.2.0.4:80/testAPI";
+export const url = "http://10.2.0.5:80/testAPI";
