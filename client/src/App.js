@@ -27,6 +27,7 @@ class App extends Component {
       // Handle the error gracefully, e.g., set state to indicate an error occurred
     }
     console.log(url);
+    console.log(this.state.apiResponse);
   }
 
   render() {
