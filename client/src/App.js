@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-
+import { url } from "./Constants";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -9,10 +9,12 @@ class App extends Component {
   }
 
   callAPI() {
-    fetch("https://github.com")
+    fetch(url)
       .then((res) => res.text())
       .then((res) => this.setState({ apiResponse: res }))
       .catch((err) => err);
+
+    console.log(url);
   }
 
   componentDidMount() {
